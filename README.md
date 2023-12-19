@@ -56,9 +56,10 @@ mockup function `CompletePayment()` as instructed.
 ├── README.md
 ├── package.json
 ├── package-lock.json
-├── server.js
 ├── .gitignore
 ├── .env
+├── node_modules/
+├── assets/
 ├── backend/
 └── frontend/
 
