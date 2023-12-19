@@ -99,6 +99,7 @@ Before you begin, make sure you have the following prerequisites:
 ## Outline
 
 - **Login -**
+
 ![login](/assets/login.gif)
 
 - **Age contraint handling while login -** login will fail if age constraints are not met.
