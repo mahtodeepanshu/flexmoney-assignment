@@ -107,6 +107,7 @@ Before you begin, make sure you have the following prerequisites:
  
 
 - **Payment action -** 
+
 ![pay-success](/assets/pay-success.gif)
 
 
