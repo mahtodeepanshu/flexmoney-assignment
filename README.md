@@ -2,25 +2,31 @@
 
 This project implements a simple admission form for monthly Yoga classes, allowing users to enroll and pay fees.
 
+## Table of Contents
+- [Hosting](#hosting)
+- [Tech Stack](#tech-stack)
+- [Requirements](#requirements)
+- [Assumptions](#assumptions)
+- [Project Structure](#project-structure)
+- [Prerequisites](#prerequisites)
+- [Setup Instructions](#setup-instructions)
+- [ER Diagram](#er-diagram)
+- [Database Design](#database-design)
+- [API Endpoints](#api-endpoints)
+- [Assignment Overview](#assignment-overview)
+- [Thankyou](#thank-you)
 
 ## Hosting
 
 [Live Link](https://yoga-class-umn3.onrender.com/login) 🔗
 
+## Tech Stack
 
-
-## Table of Contents
-- [Hosting](#hosting)
-- [Requirements](#requirements)
-- [Implementation Details](#implementation-details)
-- [Folder Structure](#folder-structure)
-- [Setup Instructions](#setup-instructions)
-- [ER Diagram](#er-diagram)
-- [Database Design](#database-design)
-- [Database Design](#database-design)
-- [API Endpoints](#api-endpoints)
-- [Assumptions](#assumptions)
-
+- **Frontend**: `React`, `Redux`
+- **Backend**: `Node.js`, `Express.js`
+- **Database**: `MongoDB`
+- **Schema Format:** `JSON`
+- **Architecture:** `MVC - Model, View, Controller`
 
 
 ## Requirements
@@ -31,13 +37,16 @@ This project implements a simple admission form for monthly Yoga classes, allowi
 - In the same month, participants need to be in the same batch.
 - Basic user data validation.
 
-## Tech Stack
+## Assumptions
+-  Payment functionality was assumed to be provided by the 
+mockup function `CompletePayment()` as instructed.
 
-- **Frontend**: `React`, `Redux`
-- **Backend**: `Node.js`, `Express.js`
-- **Database**: `MongoDB`
-- **Schema Format:** `JSON`
-- **Architecture:** `MVC - Model, View, Controller`
+- The user information is assumed to be authentic.
+
+- No limit on the maximum strength of a batch was assumed.
+
+- It is assumed that the user **will** complete the monthly payment by the end of the due month. Failure of doing so is not handled therefore.
+
 
 ## Project Structure
 
@@ -96,7 +105,7 @@ Before you begin, make sure you have the following prerequisites:
 - `/profile`: Protected `GET` endpoint to fetch details of a user.
 - `/profile`: Protected `POST` endpoint to update details of a user.
 
-## Outline
+## Assignment Overview
 
 - **Login -**
 
@@ -151,16 +160,6 @@ const newMonth = async () => {
     });
 }
 ```
-
-## Assumptions
--  Payment functionality was assumed to be provided by the 
-mockup function `CompletePayment()` as instructed.
-
-- The user information is assumed to be authentic.
-
-- No limit on the maximum strength of a batch was assumed.
-
-- It is assumed that the user **will** complete the monthly payment by the end of the due month. Failure of doing so is not handled therefore.
 
 ## Thanks
 Made with ❤️ by Deepanshu
