@@ -14,6 +14,7 @@ This project implements a simple admission form for monthly Yoga classes, allowi
 - [Database Design](#database-design)
 - [API Endpoints](#api-endpoints)
 - [Assignment Overview](#assignment-overview)
+- [Scope for Improvement](#scope-for-improvement)
 - [Thankyou](#thank-you)
 
 ## Hosting
@@ -160,6 +161,22 @@ const newMonth = async () => {
     });
 }
 ```
+
+## Scope for Improvement
+
+- **Notification feature** can be implemented to notify user to pay the monthly fees if not paid already(Email/Phone).
+
+- A third-party **Payment feature** can be implemented (eg. Stripe).
+
+- **OAuth can be used.**
+
+- **Containerization** can be done.
+
+- Algorithms can be used **to improve the performance** of the system.
+
+- **Cloud architechture** can be implemented.
+
+- **Testing** can be done.
 
 ## Thanks
 Made with ❤️ by Deepanshu
