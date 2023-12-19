@@ -46,7 +46,7 @@ mockup function `CompletePayment()` as instructed.
 
 - No limit on the maximum strength of a batch was assumed.
 
-- It is assumed that the user **will** complete the monthly payment by the end of the due month. Failure of doing so is not handled therefore.
+- It is assumed that the user **will** complete the monthly payment by the end of the due month. 
 
 
 ## Project Structure
@@ -69,8 +69,8 @@ mockup function `CompletePayment()` as instructed.
 
 Before you begin, make sure you have the following prerequisites:
 
-- Use a MongoDB Cluster to store the data.
-- A database to begin with. Create it with `MongoDBCompass` and set the environment variables in a `.env` file.
+- A `MongoDB` database to begin with. 
+- `MongoDB` environment variables in a `.env` file.
 
 ## Setup Instructions
 
