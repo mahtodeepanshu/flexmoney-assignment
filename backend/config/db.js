@@ -1,15 +1,23 @@
-import mongoose from 'mongoose'
+// Import the Mongoose library for MongoDB interactions
+import mongoose from 'mongoose';
 
+// Define a function to establish a connection to the MongoDB database
 const connectDB = async () => {
-    try{
-        mongoose.set('strictQuery', true)
-        const conn = await mongoose.connect(process.env.MONGO_URI)
+    try {
+        // Set strict query mode to true for MongoDB connection
+        mongoose.set('strictQuery', true);
 
-        console.log(`MonogoDB Connected: ${conn.connection.host}`)
-    } catch(error){
-        console.log(`Error: ${error.message}`)
-        process.exit(1)
+        // Use Mongoose to connect to the MongoDB database using the provided URI from the environment variables
+        const conn = await mongoose.connect(process.env.MONGO_URI);
+
+        // Log a success message if the connection is established
+        console.log(`MonogoDB Connected: ${conn.connection.host}`);
+    } catch (error) {
+        // Log an error message if there's an issue connecting to the database and exit the process
+        console.log(`Error: ${error.message}`);
+        process.exit(1);
     }
-}
+};
 
-export default connectDB
+// Export the connectDB function to make it available for use in other parts of the application
+export default connectDB;

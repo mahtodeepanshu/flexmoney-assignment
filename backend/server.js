@@ -6,32 +6,46 @@ import userRoutes from './routes/userRoutes.js'
 import { newMonth } from './controllers/userController.js'
 import { notFound, errorHandler } from './middleware/errorMiddleware.js'
 
-dotenv.config()
+// Connect to the database
+connectDB();
 
-connectDB()
+// Create an Express application
+const app = express();
 
-const app = express()
+// Enable JSON parsing for incoming requests
+app.use(express.json());
 
-app.use(express.json()) 
+// Execute the newMonth function (Assuming it initializes logic for a new month)
+newMonth();
 
-newMonth()
+// Use the userRoutes for API endpoints under the '/api/users' path
+app.use('/api/users', userRoutes);
 
-app.use('/api/users', userRoutes)
-
+// Resolve the absolute path of the project
 const __dirname = path.resolve();
 
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static(path.join(__dirname, '/frontend/build')))
+// Serve static files and index.html for production
+if (process.env.NODE_ENV === 'production') {
+    // Serve static files from the 'frontend/build' directory
+    app.use(express.static(path.join(__dirname, '/frontend/build')));
 
-    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html')))
+    // For any other route, serve the index.html file
+    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html')));
 } else {
+    // For development, respond with a simple message for the root route
     app.get('/', (req, res) => {
-        res.send('API is running...')
-    })
+        res.send('API is running...');
+    });
 }
 
-app.use(notFound)
-app.use(errorHandler)
+// Middleware for handling 404 (Not Found) errors
+app.use(notFound);
 
-const PORT = process.env.PORT || 5000
-app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`))
+// Middleware for handling other errors
+app.use(errorHandler);
+
+// Set the port for the server to listen on, default to 5000
+const PORT = process.env.PORT || 5000;
+
+// Start the Express server
+app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`));
